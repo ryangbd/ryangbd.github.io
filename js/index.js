@@ -41,3 +41,22 @@ function voltarcontatos(){
     let fundocontato = document.querySelector(".fundocontato")
     fundocontato.style.display='none'
 }
+
+function showexpandir(){
+    let expandir = document.querySelector(".expandir")
+    expandir.style.display='flex'
+    expandir.style.animation=''
+
+    expandir.addEventListener("click", function (event) {
+    if (!event.target.closest(".card")) {
+        fecharexpandir();
+    }
+});}
+
+function fecharexpandir(){
+    let expandir = document.querySelector(".expandir")
+    expandir.style.animation='saircard 0.8s ease'
+    setTimeout(() => {
+    expandir.style.display='none'
+}, 200);
+}

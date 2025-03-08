@@ -51,7 +51,7 @@ body{
     position: relative;
     margin-top: 4em;
     padding: 1em;
-    border-radius: 8px;
+    border-radius: 10px;
     flex-direction:row;
     overflow: hidden;
 
@@ -59,8 +59,7 @@ body{
 .img{
     width: 25vw;
     height: auto;
-    left: 61%;
-    position: absolute;
+    position: relative;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
@@ -76,8 +75,9 @@ body{
     width: 100%;
     height:auto;
     object-fit: cover;
-    bottom: -40%;
     position: absolute;
+    aspect-ratio: 1/1;
+
 }
 .sp1{
     color: white;
@@ -92,6 +92,7 @@ body{
   animation: chegar 0.8s ease;
   opacity: 1;
   transition: opacity 0.8s ease, transform 0.8s ease;
+  overflow-y: auto;
 }
 @keyframes chegar {
   0% { transform: translateX(-20%); opacity: 0; }
@@ -116,6 +117,8 @@ body{
   transform: translateX(-20%);
   transition: opacity 0.8s ease, transform 0.8s ease;
   color: white;
+  overflow-y: auto;
+
 }
 .cv{
     border: none;
@@ -140,11 +143,10 @@ body{
     align-items: center;
 }
 .card span{
-    position: absolute;
+    position: relative;
     color: white;
     font-size: 1.5em;
-    top: 55%;
-    right: 17.4%;
+    margin-top: 1em;
 }
 
 /* From Uiverse.io by wilsondesouza */ 
@@ -152,6 +154,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: auto;
   }
   .example-2 .icon-content {
     margin: 0 10px;
@@ -254,8 +257,8 @@ body{
   }
   .contato{
     background-color: rgb(12, 12, 12);
-    width: 25vw;
-    height: 12vh;
+    width: fit-content;
+    height: fit-content;
     padding: 1em;
     border-radius: 15px;
     display: flex;
@@ -269,6 +272,9 @@ body{
     position: relative;
     top: 0;
     right: 0;
+  }
+  .contato .example-2{
+    margin: 0;
   }
 
 
@@ -357,4 +363,85 @@ body{
     animation-delay: -32s;
     transform-origin: -24vw 5vh;
     box-shadow: -100vmin 0 13.33474317371666vmin currentColor;
+}
+.expandir{
+  display: none;
+}
+.iconemoveis{
+  display: none;
+}
+.headertext{
+  display: none;
+}
+@media (max-width:1000px) {
+  .example-2{
+    position: relative !important;
+    left: 0 !important;
+  }
+  .card span{
+    right: auto;
+  }
+}
+@media (max-width:600px){
+  .icon-content{
+    scale: 0.8;
+    margin: 0 !important;
+    
+  }
+  .card{
+    display: none;
+  }
+  .inicio{
+    width: 100%;
+  }
+  .projetos{
+    width: 100%;
+  }
+  .expandir .card{
+    display: flex;
+    width: 50vw;
+    height: 100vh;
+    right: 0;
+    position: absolute;
+    background-color: #080808;
+    z-index: 999;
+    animation: chegadacard 0.2s;
+    padding-top: 20%;
+  }
+  .expandir .card .example-2{
+    margin-top: 0 !important;
+  }
+  @keyframes chegadacard{
+    0%{transform: translateX(50%);}
+  }
+  @keyframes saircard {
+    0% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(50%); opacity: 0; }
+  }
+
+  .expandir{
+    position: absolute;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    z-index: 600;
+    background-color: rgba(0, 0, 0, 0.500);
+  }
+  .iconemoveis{
+    display: flex;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    right: 0;
+    aspect-ratio: 1 / 1;
+    margin-left: auto;
+  }
+  .headertext{
+    display: flex;
+    flex-direction: row;
+    padding-right: 1em;
+  }
+  .headertextnormal{
+    display: none;
+  }
 }
