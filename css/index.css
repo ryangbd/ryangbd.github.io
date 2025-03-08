@@ -282,15 +282,13 @@ body{
 
 .background {
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+    width: 105vw;
+    height: 105vh;
     top: 0;
     left: 0;
     background: #080808;
     overflow: hidden;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    
 }
 
 .background span {
