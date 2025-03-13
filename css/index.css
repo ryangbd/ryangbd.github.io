@@ -37,6 +37,9 @@ body{
     transition: 0.2s;
     border-radius: 8px;
 }
+.header button:nth-child(4){
+  display: none;
+}
 .header button:hover{
   background-color: #f8f8f8;
   color: black;
@@ -47,6 +50,7 @@ body{
     display: flex;
     width: 80vw;
     height: 70vh;
+    min-height: 70vh;
     background-color: rgba(8, 8, 8, 0.541);
     position: relative;
     margin-top: 4em;
@@ -66,6 +70,9 @@ body{
     overflow: hidden;
     aspect-ratio: 1/1;
     animation: opacidade 0.8s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 @keyframes opacidade{
   0%{opacity: 0.5;}
@@ -77,11 +84,29 @@ body{
     object-fit: cover;
     position: absolute;
     aspect-ratio: 1/1;
+    border-radius: 50%;
 
 }
 .sp1{
     color: white;
     font-size: 2.0em;
+}
+
+.svglinguagens{
+  padding: 0;
+}
+.svglinguagens img{
+  width: 1.5em !important;
+}
+.svglinguagens li{
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+.svglinguagens li::before {
+  content: "•";
+  font-size: 20px;
+  color: rgb(255, 255, 255);
 }
 
 .inicio {
@@ -150,11 +175,23 @@ body{
 }
 
 /* From Uiverse.io by wilsondesouza */ 
+.contatos{
+    display: flex;
+    margin-top: auto;
+    flex-direction: row;
+    gap: 1em;
+    align-items: center;
+}
+.contatos span{
+    font-size: 1.2em;
+    margin: 0;
+}
   .example-2 {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: auto;
+    margin-bottom: 0;
   }
   .example-2 .icon-content {
     margin: 0 10px;
@@ -253,6 +290,9 @@ body{
     justify-content: center;
     align-items: center;
     display: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     transition: 0.5s;
   }
   .contato{
@@ -364,6 +404,16 @@ body{
     transform-origin: -24vw 5vh;
     box-shadow: -100vmin 0 13.33474317371666vmin currentColor;
 }
+.frontend{
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  gap: 0.2em;
+}
+.frontend svg{
+  width: 1.7em !important;
+  height: 1.7em !important;
+}
 .expandir{
   display: none;
 }
@@ -371,6 +421,9 @@ body{
   display: none;
 }
 .headertext{
+  display: none;
+}
+.headermobile{
   display: none;
 }
 @media (max-width:1000px) {
@@ -382,7 +435,52 @@ body{
     right: auto;
   }
 }
-@media (max-width:600px){
+@media (max-width:670px){
+  
+  .header{
+    display: none;
+  }
+  .headermobile{
+    display: flex;
+    width: 100vw;
+    height: 13vh;
+    position: relative;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(6, 6, 6, 0.781);
+    gap: 1em;
+    flex-direction: column;
+  }
+  .headermobile span{
+    font-size: 2em;
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    text-shadow: 3px 0px 5px rgba(255, 255, 255, 0.404);
+
+}
+  .headermobile nav{
+    background-color: rgba(6, 6, 6, 0.555);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+  }
+  nav button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.3em;
+    cursor: pointer;
+    height: 100%;
+    transition: 0.2s;
+    border-radius: 8px;
+}
+  nav button:nth-child(3){
+    display: flex;
+  }
+
   .icon-content{
     scale: 0.8;
     margin: 0 !important;
@@ -443,5 +541,13 @@ body{
   }
   .headertextnormal{
     display: none;
+  }
+  .contato{
+    height: 20vh;
+    flex-direction: column;
+    box-shadow: #ffffffa1 1px 1px 8px;
+  }
+  .fundocontato{
+    background-color: #000000cb;
   }
 }

@@ -1,10 +1,12 @@
 function showprojeto() {
     let home = document.querySelector(".inicio");
     let projeto = document.querySelector(".projetos");
+    let box = document.querySelector(".home")
 
     home.style.animation = "sair 1s ease";
     home.style.opacity = "0";
     home.style.transform = "translateX(20%)";
+    box.style.height= 'fit-content'
 
     setTimeout(() => {
         home.style.display = "none";
@@ -18,12 +20,14 @@ function showprojeto() {
 function voltar() {
     let home = document.querySelector(".inicio");
     let projeto = document.querySelector(".projetos");
+    let box = document.querySelector(".home")
 
     projeto.style.animation = "sair 1s ease";
     projeto.style.opacity = "0";
     projeto.style.transform = "translateX(20%)";
 
     setTimeout(() => {
+        box.style.height= ''
         projeto.style.display = "none";
         home.style.display = "flex";
         home.style.animation = "chegar 1s ease";
